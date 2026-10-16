@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ansible Lab Report</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background-color: #f4f4f4; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1 { color: #333; }
+        ul { list-style-type: disc; }
+        li { margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Отчет о системе: {{ ansible_hostname }}</h1>
+        <p>Статус: <strong>OK</strong></p>
+        <hr>
+        <h3>Характеристики сервера:</h3>
+        <ul>
+            <li><strong>Hostname:</strong> {{ ansible_hostname }}</li>
+            <li><strong>IP Адрес:</strong> {{ ansible_default_ipv4.address }}</li>
+            <li><strong>CPU:</strong> {{ ansible_processor_count }} ядер, {{ ansible_processor_vcpus }} vCPU</li>
+            <li><strong>RAM:</strong> {{ (ansible_memtotal_mb / 1024) | round(2) }} ГБ</li>
+            <li><strong>Первый диск (HDD/SSD):</strong> {{ ansible_devices.keys() | first }} ({{ (ansible_devices[ansible_devices.keys() | first].size | default('N/A')) }})</li>
+        </ul>
+        <p><em>Страница сгенерирована автоматически через Ansible Role.</em></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+---
+- name: Задание 1.2 - Установка и настройка tuned
+  hosts: servers
+  become: true
+
+  tasks:
+    - name: Установить пакет tuned
+      apt:
+        name: tuned
+        state: present
+        update_cache: yes
+
+    - name: Запустить сервис tuned
+      service:
+        name: tuned
+        state: started
+        daemon_reload: yes
+
+    - name: Включить tuned в автозагрузку
+      systemd:
+        name: tuned
+        enabled: yes
+        daemon_reload: yes

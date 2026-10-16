@@ -1,0 +1,25 @@
+---
+- name: Подготовка сервера и проверка окружения
+  hosts: servers
+  become: true
+  tasks:
+    - name: Убедиться, что установлен Python3
+      apt:
+        name: python3
+        state: present
+      become: false
+
+    - name: Создать директорию для проекта
+      file:
+        path: /opt/my_project
+        state: directory
+        mode: '0755'
+
+    - name: Создать тестовый файл
+      copy:
+        content: "Привет, Ansible! Сервер {{ inventory_hostname }} готов к работе."
+        dest: /opt/my_project/hello.txt
+
+    - name: Вывести сообщение об успехе
+      debug:
+        msg: "Сервер {{ inventory_hostname }} успешно подготовлен!"

@@ -1,0 +1,25 @@
+---
+- name: Установить Apache
+  apt:
+    name: apache2
+    state: present
+    update_cache: yes
+
+- name: Открыть порт 80 в UFW (если установлен)
+  ufw:
+    rule: allow
+    port: '80'
+    proto: tcp
+  ignore_errors: yes
+
+- name: Создать index.html через шаблон
+  template:
+    src: index.html.j2
+    dest: /var/www/html/index.html
+    mode: '0644'
+  notify: Restart Apache
+
+- name: Включить модуль status (опционально, для красивых данных)
+  apache2_module:
+    name: status
+    state: present

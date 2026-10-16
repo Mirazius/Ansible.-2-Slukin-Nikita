@@ -1,0 +1,16 @@
+---
+- name: Задание 3 - Развертывание веб-сервера через Role
+  hosts: servers
+  become: true
+  roles:
+    - apache_web
+
+  tasks:
+    - name: Проверка доступности сайта (HTTP 200)
+      uri:
+        url: "http://{{ ansible_default_ipv4.address }}"
+        method: GET
+        return_content: no
+        status_code: 200
+      register: site_check
+      failed_when: site_check.status != 200
