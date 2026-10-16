@@ -66,12 +66,18 @@
 ```
 
 `При необходимости прикрепитe сюда скриншоты
-![Вывод 1го плейбука](https://github.com/Mirazius/Ansible.-2-Slukin-Nikita/blob/main/img/1.jpg)
-![Проверка на сервере](https://github.com/Mirazius/Ansible.-2-Slukin-Nikita/blob/main/img/2.jpg)
-![kafka](https://github.com/Mirazius/Ansible.-2-Slukin-Nikita/blob/main/img/3.jpg)
-![tuned](https://github.com/Mirazius/Ansible.-2-Slukin-Nikita/blob/main/img/4.jpg)
-![motd](https://github.com/Mirazius/Ansible.-2-Slukin-Nikita/blob/main/img/5.jpg)
+![Вывод 1го плейбука](https://github.com/Mirazius/Ansible.-2-Slukin-Nikita/blob/main/img/1.jpg)`
+
+![Проверка на сервере](https://github.com/Mirazius/Ansible.-2-Slukin-Nikita/blob/main/img/2.jpg)`
+
+![kafka](https://github.com/Mirazius/Ansible.-2-Slukin-Nikita/blob/main/img/3.jpg)`
+
+![tuned](https://github.com/Mirazius/Ansible.-2-Slukin-Nikita/blob/main/img/4.jpg)`
+
+![motd](https://github.com/Mirazius/Ansible.-2-Slukin-Nikita/blob/main/img/5.jpg)`
+
 ![Вывод финального плейбука](https://github.com/Mirazius/Ansible.-2-Slukin-Nikita/blob/main/img/6.jpg)`
+
 ### Задание 2
 
 `Приведите ответ в свободной форме........`
